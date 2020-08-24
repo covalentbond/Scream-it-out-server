@@ -8,8 +8,8 @@ let db = {
       imageUrl: "image/dsfsdkfghskdfgs/dgfdhfgdh",
       bio: "Hello, my name is user, nice to meet you",
       website: "https://user.com",
-      location: "Lonodn, UK",
-    },
+      location: "Lonodn, UK"
+    }
   ],
   screams: [
     {
@@ -17,16 +17,16 @@ let db = {
       body: "This is a sample scream",
       createdAt: "2019-03-15T10:59:52.798Z",
       likeCount: 5,
-      commentCount: 3,
-    },
+      commentCount: 3
+    }
   ],
   comments: [
     {
       userHandle: "user",
       screamId: "kdjsfgdksuufhgkdsufky",
       body: "nice one mate!",
-      createdAt: "2019-03-15T10:59:52.798Z",
-    },
+      createdAt: "2019-03-15T10:59:52.798Z"
+    }
   ],
   notifications: [
     {
@@ -35,9 +35,9 @@ let db = {
       read: "true | false",
       screamId: "kdjsfgdksuufhgkdsufky",
       type: "like | comment",
-      createdAt: "2019-03-15T10:59:52.798Z",
-    },
-  ],
+      createdAt: "2019-03-15T10:59:52.798Z"
+    }
+  ]
 };
 const userDetails = {
   // Redux data
@@ -49,16 +49,23 @@ const userDetails = {
     imageUrl: "image/dsfsdkfghskdfgs/dgfdhfgdh",
     bio: "Hello, my name is user, nice to meet you",
     website: "https://user.com",
-    location: "Lonodn, UK",
+    location: "Lonodn, UK"
   },
   likes: [
     {
       userHandle: "user",
-      screamId: "hh7O5oWfWucVzGbHH2pa",
+      screamId: "hh7O5oWfWucVzGbHH2pa"
     },
     {
       userHandle: "user",
-      screamId: "3IOnFoQexRcofs5OhBXO",
-    },
+      screamId: "3IOnFoQexRcofs5OhBXO"
+    }
   ],
+  //TODO:
+  upvotes: [
+    {
+      userHandle: "user",
+      screamId: "hh7O5oWfWucVzGbHH2pa"
+    }
+  ]
 };

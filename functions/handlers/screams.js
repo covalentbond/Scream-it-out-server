@@ -3,7 +3,7 @@ const { db } = require("../util/admin");
 //TODO: Get All Screams
 exports.getAllScreams = (req, res) => {
   db.collection("screams")
-    .orderBy("createdAt", "desc")
+    .orderBy("likeCount", "desc")
     .get()
     .then((data) => {
       // data is a querySnapShot type which has various document init
@@ -12,7 +12,7 @@ exports.getAllScreams = (req, res) => {
         //doc is the query snapshot of that particular document
         screams.push({
           ...doc.data(), // function that returns the data inside the document; an object
-          screamId: doc.id,
+          screamId: doc.id
         });
       });
       return res.json(screams);
@@ -28,7 +28,7 @@ exports.postOneScream = (req, res) => {
   if (req.body.body.trim() === "") {
     return res.status(400).json({
       //400 means client error
-      body: "Body must not be empty",
+      body: "Body must not be empty"
     });
   }
   const newScream = {
@@ -37,7 +37,7 @@ exports.postOneScream = (req, res) => {
     userImage: req.user.imageUrl,
     createdAt: new Date().toISOString(),
     likeCount: 0,
-    commentCount: 0,
+    commentCount: 0
   };
 
   db.collection("screams")
@@ -65,7 +65,7 @@ exports.commentOnScream = (req, res) => {
     createdAt: new Date().toISOString(),
     screamId: req.params.screamId,
     userHandle: req.user.handle,
-    userImage: req.user.imageUrl,
+    userImage: req.user.imageUrl
   };
   console.log(newComment);
 
@@ -153,7 +153,7 @@ exports.likeScream = (req, res) => {
           .collection("likes")
           .add({
             screamId: req.params.screamId,
-            userHandle: req.user.handle,
+            userHandle: req.user.handle
           })
           .then(() => {
             screamData.likeCount++;
